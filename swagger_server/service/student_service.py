@@ -30,7 +30,7 @@ def add_student(student):
     return student.student_id
 
 
-def get_student_by_id(student_id, subject,grades):
+def get_student_by_id(student_id, subject):
     student = student_db.get(doc_id=int(student_id))
     if not student:
         return student
