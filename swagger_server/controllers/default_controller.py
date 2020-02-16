@@ -37,7 +37,7 @@ def delete_student(student_id):  # noqa: E501
     return 'Not Found', 404
 
 
-def get_student_by_id(student_id, subject=None):  # noqa: E501
+def get_student_by_id(student_id, subject=None, grades=None):  # noqa: E501
     """Find student by ID and subject
 
     Returns a single student # noqa: E501
@@ -46,10 +46,12 @@ def get_student_by_id(student_id, subject=None):  # noqa: E501
     :type student_id: int
     :param subject: The subject name
     :type subject: str
+    :param grades: grade of student
+    :type grades:str
 
     :rtype: Student
     """
-    res = student_service.get_student_by_id(student_id, subject=subject)
+    res = student_service.get_student_by_id(student_id, subject=subject,grades=grades)
     if res:
         return res
     return 'Not Found', 404

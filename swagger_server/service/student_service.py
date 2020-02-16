@@ -30,12 +30,14 @@ def add_student(student):
     return student.student_id
 
 
-def get_student_by_id(student_id, subject):
+def get_student_by_id(student_id, subject, grades):
     student = student_db.get(doc_id=int(student_id))
-    if not student & subject:
+    if not student:
         return student
     student = Student.from_dict(student)
     if not subject:
+        return student
+    if not grades:
         return student
 
 
