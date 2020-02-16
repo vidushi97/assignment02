@@ -32,11 +32,9 @@ def add_student(student):
 
 def get_student_by_id(student_id, subject):
     student = student_db.get(doc_id=int(student_id))
-    subject = student_db.get(doc_subject=str(subject))
     if not student & subject:
         return student
     student = Student.from_dict(student)
-    subject = Student.from_dict(subject)
     if not subject:
         return student
 
