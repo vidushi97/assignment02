@@ -23,9 +23,6 @@ def add_student(student):
     queries.append(query.grades == student.grades)
     query = reduce(lambda a, b: a & b, queries)
     res = student_db.search(query)
-    print(student.first_name)
-    print(student.last_name)
-    print(student.grades)
     if res:
         return 'already exists', 409
 
