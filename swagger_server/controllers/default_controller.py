@@ -37,8 +37,8 @@ def delete_student(student_id):  # noqa: E501
     return 'Not Found', 404
 
 
-def get_student_by_id(student_id, subject=None,grades):  # noqa: E501
-    """Find student by ID
+def get_student_by_id(student_id, subject=None,grades=None):  # noqa: E501
+    """Find student by ID and subject
 
     Returns a single student # noqa: E501
 
