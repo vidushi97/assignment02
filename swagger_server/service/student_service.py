@@ -20,7 +20,6 @@ def add_student(student):
     query = Query()
     queries.append(query.first_name == student.first_name)
     queries.append(query.last_name == student.last_name)
-    queries.append(query.grades == student.grades)
     query = reduce(lambda a, b: a & b, queries)
     res = student_db.search(query)
     if res:
@@ -31,7 +30,7 @@ def add_student(student):
     return student.student_id
 
 
-def get_student_by_id(student_id, subject):
+def get_student_by_id(student_id, subject,grades):
     student = student_db.get(doc_id=int(student_id))
     if not student:
         return student
