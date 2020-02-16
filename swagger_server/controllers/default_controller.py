@@ -16,7 +16,6 @@ def add_student(body):  # noqa: E501
 
     :rtype: str
     """
-    print(student.first_name)
     if connexion.request.is_json:
         body = Student.from_dict(connexion.request.get_json())  # noqa: E501
     return student_service.add_student(body)
