@@ -51,7 +51,7 @@ def get_student_by_id(student_id, subject=None, grades=None):  # noqa: E501
 
     :rtype: Student
     """
-    res = student_service.get_student_by_id(student_id, subject=subject,grades=grades,subject!=subject)
+    res = student_service.get_student_by_id(student_id, subject=subject,grades=grades)
     if res:
         return res
     return 'Not Found', 404
