@@ -16,6 +16,7 @@ def add_student(body):  # noqa: E501
 
     :rtype: str
     """
+
     if connexion.request.is_json:
         body = Student.from_dict(connexion.request.get_json())  # noqa: E501
     return student_service.add_student(body)
@@ -31,14 +32,15 @@ def delete_student(student_id):  # noqa: E501
 
     :rtype: Student
     """
+
     res = student_service.delete_student(student_id)
     if res:
         return res
     return 'Not Found', 404
 
 
-def get_student_by_id(student_id, subject=None, grades=None):  # noqa: E501
-    """Find student by ID and subject
+def get_student_by_id(student_id, subject=None):  # noqa: E501
+    """Find student by ID
 
     Returns a single student # noqa: E501
 
@@ -46,20 +48,31 @@ def get_student_by_id(student_id, subject=None, grades=None):  # noqa: E501
     :type student_id: int
     :param subject: The subject name
     :type subject: str
-    :param grades: grade of student
-    :type grades:str
 
     :rtype: Student
     """
-    res = student_service.get_student_by_id(student_id, subject=subject,grades=grades)
+
+    res = student_service.get_student_by_id(student_id, subject=subject)
     if res:
         return res
     return 'Not Found', 404
- 
 
-def get_student_by_lastname(last_name):
-    """Find student by last name
-       Return a single student
-    return last_name
+
+
+def get_student_by_lastname(last_name):  # noqa: E501
+    """Find student by Last Name
+
+    Returns a single student # noqa: E501
+
+    :param last_name: Last Name
+    :type last_name: str
+
+    :rtype: Student
     """
-    
+
+    res = student_service.get_student_by_last_name(last_name)
+    if res:
+        return res
+    return 'Not Found', 404
+
+
