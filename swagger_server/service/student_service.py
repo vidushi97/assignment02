@@ -39,6 +39,8 @@ def get_student_by_id(student_id, subject, grades):
         return student
     if not grades:
         return student
+    if not student && subject
+        return student
 
 
 def delete_student(student_id):

@@ -51,14 +51,11 @@ def get_student_by_id(student_id, subject=None, grades=None):  # noqa: E501
 
     :rtype: Student
     """
-    res = student_service.get_student_by_id(student_id, subject=subject,grades=grades)
+    res = student_service.get_student_by_id(student_id, subject=subject,grades=grades,subject!=subject)
     if res:
         return res
     return 'Not Found', 404
-    tes = student_services.get_student_by_id(student_id,subject!=subject)
-    if tes:
-        return tes
-    return 'Not Found',404
+ 
 
 def get_student_by_lastname(last_name):
     """Find student by last name
